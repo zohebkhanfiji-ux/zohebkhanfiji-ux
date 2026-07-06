@@ -1,0 +1,39 @@
+name: Security Scan
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Scan for assignment-style secret patterns
+        run: |
+          set -euo pipefail
+          echo "Scanning repository for assignment-style secret patterns"
+          matches="$(grep -RInE '(api[_-]?key|secret|token|password)[[:space:]]*[:=][[:space:]]*[A-Za-z0-9_./+=-]{8,}' . \
+            --exclude-dir=.git \
+            --exclude-dir=node_modules \
+            --exclude-dir=.venv \
+            --exclude-dir=dist \
+            --exclude-dir=build || true)"
+          if [ -n "$matches" ]; then
+            echo "$matches"
+            echo "Potential secret pattern detected"
+            exit 1
+          fi
+
+      - name: Check structure
+        run: |
+          set -euo pipefail
+          test -f README.md
+          test -f AGENTS.md
+          test -d docs
