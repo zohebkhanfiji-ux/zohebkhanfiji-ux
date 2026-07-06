@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check structure
+        run: |
+          test -f README.md
+          test -f AGENTS.md
+          test -d docs
+          test -d tasks
+
+      - name: Count docs
+        run: |
+          find docs -type f | wc -l

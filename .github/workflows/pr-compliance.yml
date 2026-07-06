@@ -1,0 +1,43 @@
+name: PR Compliance
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check PR title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          set -euo pipefail
+          echo "Validating PR title"
+          test -n "$PR_TITLE"
+
+      - name: Check PR body sections
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          set -euo pipefail
+          echo "Validating required PR body sections"
+          printf '%s\n' "$PR_BODY" | grep -qi "summary"
+          printf '%s\n' "$PR_BODY" | grep -Eqi "changes|added|purpose|checklist"
+
+      - name: Basic secret scan
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          set -euo pipefail
+          echo "Scanning PR body for assignment-style secret patterns"
+          if printf '%s\n' "$PR_BODY" | grep -Eiq '(api[_-]?key|secret|token|password)[[:space:]]*[:=][[:space:]]*[A-Za-z0-9_./+=-]{8,}'; then
+            echo "Potential secret pattern detected in PR body"
+            exit 1
+          fi
