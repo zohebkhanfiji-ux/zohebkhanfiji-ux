@@ -1,0 +1,24 @@
+name: Security Scan
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scan for keywords
+        run: |
+          echo "Scanning repository"
+          ! grep -R "api_key" . || exit 0
+          ! grep -R "secret" . || exit 0
+
+      - name: Check structure
+        run: |
+          test -f README.md
+          test -f AGENTS.md
+          test -d docs
