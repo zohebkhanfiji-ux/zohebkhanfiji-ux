@@ -2,7 +2,7 @@
 
 ## Overview
 
-This backlog tracks structured, public-safe tasks for repository development, documentation, and system setup.
+This backlog tracks structured, public-safe tasks for repository development, documentation, automation, and scalable governance.
 
 Each item should be converted into a GitHub Issue before execution.
 
@@ -13,7 +13,7 @@ Each item should be converted into a GitHub Issue before execution.
 - [x] Initialize README.md
 - [x] Create AGENTS.md
 - [x] Create operating system framework
-- [x] Create security & confidentiality rules
+- [x] Create repository safety rules
 
 ---
 
@@ -29,18 +29,48 @@ Each item should be converted into a GitHub Issue before execution.
 
 ## Phase 2 — Documentation Expansion
 
-- [ ] Define product documentation structure
-- [ ] Define AI agent workflows for execution
-- [ ] Create project roadmap expansion system
-- [ ] Add architecture diagrams at high level
+- [x] Define product documentation structure
+- [x] Define AI agent workflows for execution
+- [x] Create project roadmap expansion system
+- [x] Add architecture overview at high level
 
 ---
 
 ## Phase 3 — Automation Layer
 
-- [ ] Add deeper GitHub Actions validation workflows
-- [ ] Add automated documentation checks
-- [ ] Add PR compliance checks
+- [x] Add GitHub Actions validation workflows
+- [x] Add automated documentation checks
+- [x] Add PR compliance checks
+- [x] Improve PR body validation logic
+
+---
+
+## Phase 4 — Hardening & Quality Gates
+
+- [x] Add system hardening documentation
+- [x] Add repository scan workflow
+- [x] Enforce basic repository structure checks
+- [x] Keep automation public-safe and reviewable
+
+---
+
+## Phase 5 — Scaling & Release Governance
+
+- [x] Update backlog status through Phase 4
+- [x] Add release governance documentation
+- [x] Add scaling framework documentation
+- [ ] Add repository ownership matrix
+- [ ] Add release checklist template
+- [ ] Define versioning and changelog process
+
+---
+
+## Future Phase Candidates
+
+- [ ] Multi-repo coordination model
+- [ ] Quality dashboard documentation
+- [ ] Release notes automation
+- [ ] Advanced markdown validation
 
 ---
 
@@ -50,9 +80,10 @@ Each item should be converted into a GitHub Issue before execution.
 - Keep entries suitable for a public repository
 - Break large tasks into subtasks
 - Track meaningful changes through pull requests
+- Keep automation lightweight and reviewable
 
 ---
 
 ## Status
 
-Phase 1 workflow setup is staged on the `phase-1-codex-workflow` branch and ready for pull request review.
+Repository phases 0-4 are complete and merged. Phase 5 adds scaling and release governance documentation while preserving public-safe boundaries.
