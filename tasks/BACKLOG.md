@@ -19,11 +19,11 @@ Each item should be converted into a GitHub Issue before execution.
 
 ## Phase 1 — Workflow System Setup
 
-- [ ] Add issue templates (.github)
-- [ ] Add pull request template
-- [ ] Add repository health workflow
-- [ ] Define labeling system (public-safe only)
-- [ ] Establish Codex branching rules
+- [x] Add issue templates (.github)
+- [x] Add pull request template
+- [x] Add repository health workflow
+- [x] Define labeling system
+- [x] Establish Codex branching rules
 
 ---
 
@@ -32,27 +32,27 @@ Each item should be converted into a GitHub Issue before execution.
 - [ ] Define product documentation structure
 - [ ] Define AI agent workflows for execution
 - [ ] Create project roadmap expansion system
-- [ ] Add architecture diagrams (high-level only)
+- [ ] Add architecture diagrams at high level
 
 ---
 
 ## Phase 3 — Automation Layer
 
-- [ ] GitHub Actions validation workflows
-- [ ] Automated documentation checks
-- [ ] PR compliance checks
+- [ ] Add deeper GitHub Actions validation workflows
+- [ ] Add automated documentation checks
+- [ ] Add PR compliance checks
 
 ---
 
 ## Rules
 
 - Each task = one issue
-- No sensitive data in any task
-- Keep all entries public-safe
+- Keep entries suitable for a public repository
 - Break large tasks into subtasks
+- Track meaningful changes through pull requests
 
 ---
 
 ## Status
 
-This backlog is actively maintained and will evolve as the system scales.
+Phase 1 workflow setup is staged on the `phase-1-codex-workflow` branch and ready for pull request review.
