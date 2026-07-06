@@ -59,9 +59,9 @@ Each item should be converted into a GitHub Issue before execution.
 - [x] Update backlog status through Phase 4
 - [x] Add release governance documentation
 - [x] Add scaling framework documentation
-- [ ] Add repository ownership matrix
-- [ ] Add release checklist template
-- [ ] Define versioning and changelog process
+- [x] Add repository ownership matrix
+- [x] Add release checklist template
+- [x] Define versioning and changelog process
 
 ---
 
@@ -71,6 +71,7 @@ Each item should be converted into a GitHub Issue before execution.
 - [ ] Quality dashboard documentation
 - [ ] Release notes automation
 - [ ] Advanced markdown validation
+- [ ] Baseline v1.0.0 release marker
 
 ---
 
@@ -86,4 +87,4 @@ Each item should be converted into a GitHub Issue before execution.
 
 ## Status
 
-Repository phases 0-4 are complete and merged. Phase 5 adds scaling and release governance documentation while preserving public-safe boundaries.
+Repository phases 0-5 are complete and merged or ready for merge through the release operations workflow. Future work should begin from a new issue and branch.
