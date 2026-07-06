@@ -65,13 +65,23 @@ Each item should be converted into a GitHub Issue before execution.
 
 ---
 
+## Phase 6 — v1.0.0 Baseline Release
+
+- [x] Add CHANGELOG.md
+- [x] Add RELEASE_NOTES_v1.0.0.md
+- [x] Add VERSION file
+- [x] Update README status to show release readiness
+- [x] Package repository as v1.0.0 baseline
+
+---
+
 ## Future Phase Candidates
 
 - [ ] Multi-repo coordination model
 - [ ] Quality dashboard documentation
 - [ ] Release notes automation
 - [ ] Advanced markdown validation
-- [ ] Baseline v1.0.0 release marker
+- [ ] Formal GitHub release or tag marker
 
 ---
 
@@ -87,4 +97,4 @@ Each item should be converted into a GitHub Issue before execution.
 
 ## Status
 
-Repository phases 0-5 are complete and merged or ready for merge through the release operations workflow. Future work should begin from a new issue and branch.
+Repository phases 0-6 are complete or ready for merge through the v1.0.0 baseline release workflow. Future work should begin from a new issue and branch.
