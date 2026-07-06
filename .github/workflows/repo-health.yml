@@ -1,0 +1,25 @@
+name: Repo Health
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  required-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify required files
+        run: |
+          test -f README.md
+          test -f AGENTS.md
+          test -f docs/PROJECT_BRIEF.md
+          test -f docs/OPERATING_SYSTEM.md
+          test -f docs/SECURITY_AND_CONFIDENTIALITY.md
+          test -f tasks/BACKLOG.md
+
+      - name: Check markdown files are present
+        run: |
+          find . -name "*.md" -print | sort
