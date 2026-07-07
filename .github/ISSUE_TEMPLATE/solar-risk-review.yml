@@ -1,0 +1,75 @@
+name: Solar Compliance / Risk Review
+description: Review compliance, domestic content, contract, delivery, and payment risk
+title: "[Risk Review] Buyer / Opportunity ID"
+labels:
+  - risk:compliance
+  - risk:legal
+body:
+  - type: input
+    id: opportunity_id
+    attributes:
+      label: Opportunity ID
+      placeholder: SOLAR-2026-0001
+    validations:
+      required: true
+
+  - type: input
+    id: buyer
+    attributes:
+      label: Buyer
+      placeholder: Buyer name
+    validations:
+      required: true
+
+  - type: dropdown
+    id: risk_level
+    attributes:
+      label: Initial Risk Level
+      options:
+        - Green
+        - Yellow
+        - Red
+        - Executive Review
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: risk_types
+    attributes:
+      label: Risk Types
+      options:
+        - label: Domestic content representation
+        - label: Buy America / BABA / IRA requirement
+        - label: UFLPA / supply-chain representation
+        - label: Certification or datasheet mismatch
+        - label: Warranty exception
+        - label: Liquidated damages
+        - label: Bond / guarantee
+        - label: Payment terms
+        - label: Indemnity / limitation of liability
+        - label: Delivery schedule risk
+        - label: Export / ITAR / CUI / cyber requirement
+
+  - type: textarea
+    id: risk_summary
+    attributes:
+      label: Risk Summary
+      placeholder: Describe the risk, buyer language, contract section, and potential exposure
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_mitigation
+    attributes:
+      label: Proposed Mitigation
+      placeholder: Exception language, approval, revised terms, no-bid recommendation, or required documentation
+    validations:
+      required: false
+
+  - type: textarea
+    id: approval_required
+    attributes:
+      label: Approval Required
+      placeholder: Command Agent, Executive, Legal, Compliance, Finance
+    validations:
+      required: false
