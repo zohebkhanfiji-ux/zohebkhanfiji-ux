@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/solar-module-opportunity.schema.json",
+  "title": "Solar Module Supply Opportunity",
+  "type": "object",
+  "required": [
+    "opportunity_id",
+    "source",
+    "buyer_name",
+    "opportunity_title",
+    "submission_deadline",
+    "current_status"
+  ],
+  "properties": {
+    "opportunity_id": {
+      "type": "string",
+      "description": "Internal opportunity identifier such as SOLAR-2026-0001"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "SAM.gov",
+        "DOE",
+        "Utility",
+        "IPP",
+        "EPC",
+        "Distributor",
+        "Direct Buyer",
+        "Other"
+      ]
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "buyer_name": {
+      "type": "string"
+    },
+    "buyer_type": {
+      "type": "string",
+      "enum": [
+        "Federal",
+        "State",
+        "Utility",
+        "IPP",
+        "EPC",
+        "Distributor",
+        "Private",
+        "Other"
+      ]
+    },
+    "opportunity_title": {
+      "type": "string"
+    },
+    "notice_type": {
+      "type": "string",
+      "enum": [
+        "RFI",
+        "RFQ",
+        "RFP",
+        "IFB",
+        "Grant",
+        "Direct Quote",
+        "Framework Agreement",
+        "Other"
+      ]
+    },
+    "submission_deadline": {
+      "type": "string",
+      "description": "Use ISO 8601 format where possible"
+    },
+    "questions_deadline": {
+      "type": "string"
+    },
+    "estimated_volume_mw": {
+      "type": ["number", "string"]
+    },
+    "module_requirement": {
+      "type": "object",
+      "properties": {
+        "wattage": {
+          "type": "string"
+        },
+        "technology": {
+          "type": "string",
+          "enum": [
+            "Mono PERC",
+            "TOPCon",
+            "HJT",
+            "Selenium-enhanced",
+            "Other",
+            "Unknown"
+          ]
+        },
+        "domestic_content_required": {
+          "type": "boolean"
+        },
+        "certifications_required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "warranty_required": {
+          "type": "string"
+        }
+      }
+    },
+    "delivery_requirement": {
+      "type": "object",
+      "properties": {
+        "delivery_location": {
+          "type": "string"
+        },
+        "required_delivery_date": {
+          "type": "string"
+        },
+        "incoterms": {
+          "type": "string"
+        },
+        "freight_responsibility": {
+          "type": "string"
+        }
+      }
+    },
+    "commercials": {
+      "type": "object",
+      "properties": {
+        "target_price_per_watt": {
+          "type": "string"
+        },
+        "payment_terms": {
+          "type": "string"
+        },
+        "bonding_required": {
+          "type": "boolean"
+        },
+        "liquidated_damages": {
+          "type": "boolean"
+        }
+      }
+    },
+    "qualification_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "bid_decision": {
+      "type": "string",
+      "enum": [
+        "Bid",
+        "No-Bid",
+        "Hold",
+        "Executive Review",
+        "Pending"
+      ]
+    },
+    "assigned_agents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "current_status": {
+      "type": "string",
+      "enum": [
+        "Raw Intake",
+        "Initial Review",
+        "Qualified",
+        "Pricing Required",
+        "Proposal Build",
+        "Risk Review",
+        "Ready for Approval",
+        "Submitted",
+        "Award / PO",
+        "No-Bid / Lost"
+      ]
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "blocker": { "type": "string" },
+          "owner": { "type": "string" },
+          "due_date": { "type": "string" },
+          "status": { "type": "string" }
+        }
+      }
+    }
+  }
+}
