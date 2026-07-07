@@ -1,0 +1,100 @@
+name: Solar Module Opportunity Intake
+description: Capture a new solar module supply opportunity
+title: "[Opportunity] Buyer / Project Name / MW"
+labels:
+  - status:intake
+  - type:module-supply
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: SAM.gov, DOE, Utility, EPC, Distributor, Direct Buyer, or Other
+      placeholder: SAM.gov
+    validations:
+      required: true
+
+  - type: input
+    id: source_link
+    attributes:
+      label: Source Link / Record
+      placeholder: Paste link or notice record
+    validations:
+      required: false
+
+  - type: input
+    id: buyer
+    attributes:
+      label: Buyer Name
+      placeholder: Agency, EPC, utility, developer, distributor, or private buyer
+    validations:
+      required: true
+
+  - type: dropdown
+    id: buyer_type
+    attributes:
+      label: Buyer Type
+      options:
+        - Federal
+        - State
+        - Utility
+        - IPP
+        - EPC
+        - Distributor
+        - Private
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: Submission Deadline
+      placeholder: YYYY-MM-DD HH:MM Timezone
+    validations:
+      required: true
+
+  - type: input
+    id: volume
+    attributes:
+      label: Estimated Volume
+      placeholder: MW, module count, container count, or unknown
+    validations:
+      required: false
+
+  - type: dropdown
+    id: domestic_content
+    attributes:
+      label: Domestic Content Required?
+      options:
+        - Yes
+        - No
+        - Unknown
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical_requirements
+    attributes:
+      label: Technical Requirements
+      description: Wattage, certifications, warranty, delivery location, module type, domestic-content requirements
+      placeholder: 550W utility module, domestic content required, UL certification, delivery to Texas
+    validations:
+      required: true
+
+  - type: textarea
+    id: commercial_requirements
+    attributes:
+      label: Commercial Requirements
+      description: Price target, payment terms, delivery terms, bonding, LDs, contract risk
+      placeholder: Target $/W, DDP, payment terms, quote validity
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes / Recommended Next Action
+      placeholder: Assign Product Fit Agent, Pricing Agent, Compliance Agent, etc.
+    validations:
+      required: false
