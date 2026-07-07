@@ -1,0 +1,81 @@
+name: Solar Pricing Request
+description: Request pricing for a qualified solar module supply opportunity
+title: "[Pricing] Buyer / Opportunity ID"
+labels:
+  - status:pricing
+body:
+  - type: input
+    id: opportunity_id
+    attributes:
+      label: Opportunity ID
+      placeholder: SOLAR-2026-0001
+    validations:
+      required: true
+
+  - type: input
+    id: buyer
+    attributes:
+      label: Buyer
+      placeholder: Buyer name
+    validations:
+      required: true
+
+  - type: input
+    id: product_family
+    attributes:
+      label: Product Family
+      placeholder: 405-415W Residential, 550-580W Utility, 600-700W Utility, Domestic Content Line
+    validations:
+      required: true
+
+  - type: input
+    id: volume
+    attributes:
+      label: Volume
+      placeholder: MW, module count, pallet count, or container count
+    validations:
+      required: true
+
+  - type: input
+    id: delivery_location
+    attributes:
+      label: Delivery Location
+      placeholder: City, State / Site / Port / Warehouse
+    validations:
+      required: true
+
+  - type: input
+    id: required_delivery_date
+    attributes:
+      label: Required Delivery Date
+      placeholder: YYYY-MM-DD or schedule window
+    validations:
+      required: false
+
+  - type: dropdown
+    id: domestic_content
+    attributes:
+      label: Domestic Content Required?
+      options:
+        - Yes
+        - No
+        - Unknown
+    validations:
+      required: true
+
+  - type: textarea
+    id: commercial_terms
+    attributes:
+      label: Commercial Terms
+      description: Target price, payment terms, Incoterms, quote validity, bonding, LDs
+      placeholder: DDP Texas, net terms, target $/W, quote validity
+    validations:
+      required: true
+
+  - type: textarea
+    id: approval_notes
+    attributes:
+      label: Approval Notes
+      placeholder: Required approval level, margin notes, executive review requirements
+    validations:
+      required: false
